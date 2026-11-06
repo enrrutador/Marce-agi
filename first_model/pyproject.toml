@@ -1,0 +1,16 @@
+[project]
+name = "marce-agi"
+version = "0.0.1"
+description = "Kernel cognitivo Marce-AGI (fase 0): memoria + router + trazas, sin dependencias"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.scripts]
+marce-agi = "marce_agi.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

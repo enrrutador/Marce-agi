@@ -26,11 +26,14 @@ Ver [`training/README.md`](training/README.md).
 
 | Fase | Meta | Estado |
 |---|---|---|
-| 0 | Esqueleto del kernel cognitivo (memoria + router + trazas) | en desarrollo |
+| 0 | Esqueleto del kernel cognitivo (memoria + router + trazas) | ✔ base (9 tests; razonadores stub; port real = fase 1) |
 | 1 | Port de razonadores simbólicos desde ARCA-LLM2 | pendiente |
 | 2 | Aprendizaje continuo (HDC one-shot + Memoria semántica) | pendiente |
 | 3 | Bucle autónomo: planificar → ejecutar → evaluar → aprender | pendiente |
 | 4 | Autoevaluación y automejora medible | pendiente |
+
+> Fase 0 emite **`cerebro.jsonl`** (stream de eventos por ciclo cognitivo): es el
+> contrato para el futuro frontend observador del cerebro.
 
 ## Estructura
 
