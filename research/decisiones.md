@@ -48,9 +48,9 @@ Mapeo razonadores ARCA-llm ↔ estudio (leído contra el código):
 | Datalog (77 l, unificación + saturación, límite 10k, trazas) | Cumple Sistema 2: derivaciones garantizadas con traza (avenida neuro-simbólica) | sin negación ni confianzas graduales tipo PLN (fase 2) |
 | CAS (57 l, AST seguro, whitelist de operadores) | Cumple "matemática nunca alucina" | solo numérica; expresión simbólica futura |
 | A* (51 l, rejilla 2D, heurística Manhattan) | Cumple planificación exacta con presupuesto | heurística es fija: el estudio (JEPA/planeo por valor) pide `d(sA,sB) ≈ costo` aprendida de memoria (fase 2/3) |
-| HDC (77 l, D=10k bits, trigramas, Hamming, sin gradientes) | Güe: one-shot alineado a D1 e idea importable de predicción latente no generativa | dependencia numpy: mantener core stdlib; HDC como módulo opcional (fase 2) |
+| HDC (77 l, D=10k bits, trigramas, Hamming, sin gradientes) | Alineado: one-shot según D1 e idea importable de predicción latente no generativa | dependencia numpy: mantener core stdlib; HDC como módulo opcional (fase 2) |
 | Bandit (25 l) | Débil vs estudio | YA mejorado: router Thompson (`marce_agi/router.py`); evolución = AB-MCTS con Go-Wider/Go-Deeper sobre razonadores (fase 1+) |
 
 Plan de fase 1 derivado: portar `unify/substitute/saturación` + AST-CAS + A* con
 presupuesto a `marce_agi/` (reemplazando stubs, misma interfaz), datos leídos de
-`MemoryStore` reglas si/entonces + hechos; stubs demuelone solo tras tests verdes.
+`MemoryStore`: reglas si/entonces + hechos; los stubs se retiran sólo con tests verdes.
