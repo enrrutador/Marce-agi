@@ -16,13 +16,19 @@ aprendizaje continuo y memoria creciente.
 - **ARCA-LLM2**: razonadores simbólicos deterministas (Datalog, CAS, planificación
   A*), aprendizaje one-shot vía HDC, bandit router, paging < 800 MB RAM.
 
+## Entrenamiento
+
+El modelo se entrenará en **Kaggle** en sesiones chunked de 12 h con estado
+versionado en Kaggle Datasets (resume exacto, trazabilidad por commit de git).
+Ver [`training/README.md`](training/README.md).
+
 ## Roadmap del primer modelo
 
 | Fase | Meta | Estado |
 |---|---|---|
 | 0 | Esqueleto del kernel cognitivo (memoria + router + trazas) | en desarrollo |
 | 1 | Port de razonadores simbólicos desde ARCA-LLM2 | pendiente |
-| 2 | Aprendizaje continuo (HDC one-shot + Memoria semantic) | pendiente |
+| 2 | Aprendizaje continuo (HDC one-shot + Memoria semántica) | pendiente |
 | 3 | Bucle autónomo: planificar → ejecutar → evaluar → aprender | pendiente |
 | 4 | Autoevaluación y automejora medible | pendiente |
 
@@ -30,12 +36,13 @@ aprendizaje continuo y memoria creciente.
 
 ```
 first_model/   # el primer modelo, en desarrollo
-research/      # notas e ideas de base (desde los repos ARCA)
+research/      # notas e ideas de base (repos ARCA + análisis internacional AGI/ASI 2026)
+training/      # plan y implementación del entrenamiento en Kaggle
 ```
 
 ## Principios
 
-1. **Determinista donde importa**: mátemática y lógica nunca alucinan.
+1. **Determinista donde importa**: matemática y lógica nunca alucinan.
 2. **Trazable**: cada respuesta expone su razonamiento.
 3. **Aprende sin reentrenar**: la experiencia se indexa, no se gradúa.
 4. **Recursos mínimos**: corre en hardware modesto.
